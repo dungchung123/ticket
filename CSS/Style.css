@@ -30,3 +30,8 @@ padding-top: 1em;
 
     
 }
+.list-group-item {
+
+	border-left: none !important;
+	border-right: none !important;
+}
