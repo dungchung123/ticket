@@ -63,3 +63,32 @@ padding-bottom: 1em;
 .thumbnail-movie{
 	padding:1em 0 1em 0;
 }
+/*.facbook{
+	position: fixed;
+	z-index: 999999;
+	top: 10em;
+}*/
+.icon-left{
+	font-size: 4em;
+	position: fixed;
+	z-index: 99999;
+	right: 0;
+	top: 3em;
+	color: #4285F4;
+}
+.icon_phone{
+	font-size: 4.4em;
+	position: fixed;
+	z-index: 99999;
+	right: 0;
+	top: 4em;
+	color: rgb(234, 35, 73);
+}
+.icon-messenger{
+	font-size: 4.4em;
+	position: fixed;
+	z-index: 99999;
+	right: 0;
+	bottom: 0;
+	color: rgb(0, 132, 255);;
+}
