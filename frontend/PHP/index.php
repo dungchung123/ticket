@@ -110,70 +110,42 @@ require_once ('DB/dbhelper.php');
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
-    	<img class="d-block w-100" src="https://media.lottecinemavn.com/Media/WebAdmin/572df578cfba408f83addd4d115753fd.jpg" alt="">
+    	<img class="d-block w-75 img-fluid" src="https://galaxycine.vn/media/2020/11/2/300x450_1604290752722.jpg">
     </div>
 </button>
     <div class="col-md-4 text-center">
     	<span>BOX OFFICE</span>
+    	<?
+    		$sql="select *from Movie";
+    		$Moveilist=executeResult($sql);
+    		$stt=0;
+    	?>
     	<div class="list-group navite_rankleft">
- 	 		<a href="#" class="list-group-item list-group-item-action ">
-	    		<em >1.</em>
-	    		<em>TIỆC TRĂNG MÁU</em>
-		  	</a>
-		  <a href="#" class="list-group-item list-group-item-action">
-		  		<em>2 </em>
-    			<em>CỤC NỢ HÓA CỤC CƯNG</em>
-    			
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action">  		
-		  	<em>3.</em>
-    		<em>18</em>
-    		<em>45K RÒM</em></a>
-    		
-		  <a href="#" class="list-group-item list-group-item-action">
-		  	<em>4.</em>
-    		<em>18</em>
-    		<em>QUÁI VẬT SĂN ĐÊM</em>
-    		
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
-		  	<em>5.</em>
-    		<em>18</em>
-    		<em>TRẠI XÁC SỐNG</em>
-    		
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
-		  	<em>5.</em>
-    		<em>18</em>
-    		<em>TRẠI XÁC SỐNG</em>
-    		
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
-		  	<em>5.</em>
-    		<em>18</em>
-    		<em>TRẠI XÁC SỐNG</em>
-    		
-		  </a>
-		  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
-		  	<em>5.</em>
-    		<em>18</em>
-    		<em>TRẠI XÁC SỐNG</em>
-    		
-		  </a>
+ 	 		
+ 	 			<?
+ 	 				foreach ($Moveilist as $item) {
+ 	 					echo '
+ 	 					<a href="#" class="list-group-item list-group-item-action ">
+ 	 						<em>'.($stt=$stt+1).'</em>
+ 	 						<em>'.($item['name_movie']).'</em>
+ 	 					</a>	
+ 	 					'; 	 				}
+ 	 			?>
 	</div>
 </div>
   </div>
 </div>
 <!-- thumbail -->
  <div class="container thumbnail-movie">
-    	<div class="card-deck">
+
+    	<div class="row">
      	
 <?php 
 $sql="select * from Movie";
 $Moveilist= executeResult($sql);
 foreach ($Moveilist as $item) {
 	echo '	
-		 <div class="card col-md-3"> 
+		<div class="card col-md-3 style="margin: 1em 0 1em 0;"> 
             <img class="card-img-top img-fluid" src='.($item['directors']).'>
 			<div class="card-body">
             	<h6 class="card-title" style ="text-align: center">'.($item['name_movie']).'</h6>
@@ -184,9 +156,7 @@ foreach ($Moveilist as $item) {
          </div>';
 }
  ?> 
- 		
-           		</div>    
-     
+  </div>
 </div>
 <!-- /thumbail -->
 
