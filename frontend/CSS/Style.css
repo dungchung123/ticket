@@ -545,7 +545,9 @@ body {
 
 	margin: 1em 0;
 }
-
+.modal-dialog{
+	max-width: 70em !important;
+}
 
 
 
