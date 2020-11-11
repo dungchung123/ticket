@@ -1,24 +1,25 @@
 <?php 
 require_once ('DB/dbhelper.php');
-if (!empty($_POST)) {
-    $Name=$IMG=$Update='';
-    if (isset($_POST['Name'])) {
-        $name=$_POST['Name'];
-    }
-    if (isset($_POST['IMG'])) {
-        $name=$_POST['IMG'];
-    }
-    if (!empty($Name)) {
-        $Update=date('Y-m-d H:s:i');
-        if (id=='') {
-            $sql='insert into Slide_Herder(id,name_slide,img_slede,upload_time)valies("'.$Name.'","'.$IMG.'","'.$Update.'")';
-            execute($sql);
-            header('Location:inbox.php');
-            die();
-        }
-    }
+$id1='';
+$s_name='';
+$s_Img='';
+$s_time='';
 
-}
+if(!empty($_POST)){
+    $id1=$_POST['id'];
+ }
+ if(!empty($_POST)){
+    $s_name=$_POST['Name'];
+ }
+ if(!empty($_POST)){
+    $s_Img=$_POST['img'];
+ }
+ if(!empty($_POST)){
+    $s_time=$_POST['Update'];
+ }
+                 $sql="update Slide_Herder set name_slide = '$s_name', img_slide = '$s_Img', upload_time = '$s_time' where id= " .$id1;
+
+                execute($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,26 +83,7 @@ if (!empty($_POST)) {
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>index</a>
                         </li>
-                       <!--  <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li> -->
+                      
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
@@ -172,98 +154,7 @@ if (!empty($_POST)) {
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <!-- <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Home</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="index.html">Dashboard 1</a>
-                                </li>
-                                <li>
-                                    <a href="index2.html">Dashboard 2</a>
-                                </li>
-                                <li>
-                                    <a href="index3.html">Dashboard 3</a>
-                                </li>
-                                <li>
-                                    <a href="index4.html">Dashboard 4</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                        <!-- <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li> -->
-                        <!-- <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-copy"></i>Pages</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Register</a>
-                                </li>
-                                <li>
-                                    <a href="forget-pass.html">Forget Password</a>
-                                </li>
-                            </ul>
-                        </li> -->
-                        <!-- <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li> -->
+                        
                     </ul>
                 </nav>
             </div>
@@ -448,20 +339,46 @@ if (!empty($_POST)) {
             <!-- END HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
+            <?
+                $name='';
+                $img='';
+                $time='';
+                $id='';
+                if (isset($_GET['id'])) {
+                    $id=$_GET['id'];
+                    $sql='select *from Slide_Herder where id='.$id;
+                    $list=executeResult($sql);
+                    if ($list !=null && count($list)>0) {
+                        $l=$list[0];
+                        $name=$l['name_slide'];
+                        $img=$l['img_slide'];
+                        $time=$l['upload_time'];
+                    }
+                    else{
 
+                        $id='';
+                    }
+                }
+
+
+            ?>
           <div class="main-content">
             <form method="post">
+                <div class="form-group">
+                    <label for="email">id</label>
+                    <input type="text" class="form-control" placeholder="Enter Name" id="id" name="id" value="<?=$id?>">
+              </div>
               <div class="form-group">
                 <label for="email">Name Slide</label>
-                <input type="Name" class="form-control" placeholder="Enter Name" id="Name" name="Name">
+                <input type="text" class="form-control" placeholder="Enter Name" id="Name" name="Name" value="<?=$name?>">
               </div>
               <div class="form-group">
                 <label for="email">Slide IMG:</label>
-                <input type="IMG" class="form-control" placeholder="Enter IMG" id="IMG" >
+                <input type="text" class="form-control" placeholder="Enter IMG" id="IMG" name="img" value="<?=$img?>">
               </div>
               <div class="form-group">
                 <label for="email">Update Slide</label>
-                <input type="Update" class="form-control" placeholder="Enter Update" id="Update" name="Update">
+                <input type="text" class="form-control" placeholder="Enter Update" id="Update" name="Update" value="<?=$time?>">
               </div>
              
                 <button type="submit" class="btn btn-primary">Submit</button>

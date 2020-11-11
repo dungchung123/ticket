@@ -463,7 +463,7 @@ require_once ('DB/dbhelper.php');
                               <th scope="col" style="width:30%;"><img src="'.($item['img_slide']).'" alt="" style="max-width:100%"></th>
                               <th scope="row">'.($item['name_slide']).'</th>
                               <th scope="row">'.($item['upload_time']).'</th>
-                              <th scope="row"><a href="edit.php"><button type="button" class="btn btn-primary ">edit</button></a></th>
+                              <th scope="row"><a href="edit.php?id='.($item['id']).'","_self"><button type="button" class="btn btn-primary ">edit</button></a></th>
                               <th scope="row"><button type="button" class="btn btn-primary ">Delete</button></th>
                             </tr>
                         ';
@@ -537,7 +537,7 @@ require_once ('DB/dbhelper.php');
                                         <div class="card col-md-3 style="margin: 1em 0 1em 0;"> 
                                             <img class="card-img-top img-fluid" src='.($item['directors']).'>
 
-                                                 <button type="button" class="btn btn-light"style="float: right;">Edit</button>
+                                                 <button type="button" class="btn btn-light"style="float: right;" onclick=window.open("edit.php?id='.($item['id_movie']).'","_self")>Edit</button>
                                                                 <button type="button" class="btn btn-dark" style="float: right;">Delete</button>
                                          </div>';
                                 }

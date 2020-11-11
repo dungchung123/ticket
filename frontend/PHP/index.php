@@ -110,7 +110,7 @@ require_once ('DB/dbhelper.php');
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-8">
-    	<img class="d-block w-75 img-fluid" src="https://galaxycine.vn/media/2020/11/2/300x450_1604290752722.jpg">
+    	<img class="d-block w-75 img-fluid" src="../IMG/pp1.jpg">
     </div>
 </button>
     <div class="col-md-4 text-center">
@@ -150,7 +150,7 @@ foreach ($Moveilist as $item) {
 			<div class="card-body">
             	<h6 class="card-title" style ="text-align: center">'.($item['name_movie']).'</h6>
                 <p class="card-text"><small class="text-muted">'.($item['movie_time']).'</small></p>
-                <a href="#" class="card-link">Details</a>
+                <a href="http://localhost/php/ticket/frontend/php/details.php#" class="card-link">Details</a>
     			<a href="#" class="card-link">Buy</a>
            		</div>
          </div>';
