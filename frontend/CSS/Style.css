@@ -92,9 +92,6 @@ padding-bottom: 1em;
 	bottom: 0;
 	color: rgb(0, 132, 255);;
 }
-.thumbai{
-	
-}
 .play{
 
 	position: absolute;
@@ -548,7 +545,21 @@ body {
 .modal-dialog{
 	max-width: 70em !important;
 }
+.name{
 
+	font-size: 1.5em;
+    font-family: 'Courier New';
+    color: #00d0ff;
+}
+.fa-bell{
+
+	font-size: 1.5em !important;
+    margin: 0 0.5em !important;
+    line-height: 2em !important;
+}
+#star1{
+	margin-left: 1em;
+}
 
 
 

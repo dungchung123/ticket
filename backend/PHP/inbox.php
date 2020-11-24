@@ -460,7 +460,7 @@ require_once ('DB/dbhelper.php');
                         echo'
                             <tr>
                               <th scope="row">'.($item['id']).'</th>
-                              <th scope="col" style="width:30%;"><img src="'.($item['img_slide']).'" alt="" style="max-width:100%"></th>
+                              <th scope="col" style="width:30%;"><img src="../IMG/'.($item['img_slide']).'" alt="" style="max-width:100%"></th>
                               <th scope="row">'.($item['name_slide']).'</th>
                               <th scope="row">'.($item['upload_time']).'</th>
                               <th scope="row"><a href="edit.php?id='.($item['id']).'","_self"><button type="button" class="btn btn-primary ">edit</button></a></th>

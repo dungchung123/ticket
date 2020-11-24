@@ -17,7 +17,7 @@ if(!empty($_POST)){
  if(!empty($_POST)){
     $s_time=$_POST['Update'];
  }
-                 $sql="update Slide_Herder set name_slide = '$s_name', img_slide = '$s_Img', upload_time = '$s_time' where id= " .$id1;
+    $sql="update Slide_Herder set name_slide = '$s_name', img_slide = '$s_Img', upload_time = '$s_time' where id= " .$id1;
 
                 execute($sql);
 ?>
