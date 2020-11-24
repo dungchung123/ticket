@@ -19,19 +19,24 @@
     <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <script src="../JS/js.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<div class="icon-left">
 		<a href="">
-			<i style="font-size:1.2em;" class="fa" data-toggle="modal" data-toggle="modal" data-target="#myModal">&#xf08b;</i>
+			
+		</a>
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i style="font-size:1.2em;" class="fa" data-toggle="modal" data-toggle="modal" data-target="#myModal">&#xf08b;</i></button>
+
+	</div>
+	<div class="icon_phone" id="icon_phone" >
+		<a  class="ht" href="#" id="icon-left">
+			<div id="icon2"><i class="fa fa-phone icon2"  onmouseover="numberonmouseover()" aria-hidden="true"></i></div>
 		</a>
 
 	</div>
-	<div class="icon_phone">
-		<a href="">
-			<i class="fa fa-phone" aria-hidden="true"></i>
-		</a>
-	</div>
+
 	<div class="icon-messenger">
 		<a href="">
 			<i class='fab fa-facebook-messenger'></i>
@@ -43,11 +48,18 @@
 						<div class="col-md-4">
 							<img src="../IMG/logo1.jpg" height="50" alt="">
 						</div>
-						<div class="col-md-8">
+						<div class="col-md-4">
 							<form class="form-inline">
 								<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
 								<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+								
 					  		</form>
+
+						</div>
+						<div class="col-md-4 float-right" id="hdlogin" >
+							<span class="name login1">Login</span>
+							
+							
 						</div>
 					</div>
 	</div>
@@ -64,58 +76,130 @@
   <!-- Trigger the modal with a button -->
   <button type="button" class="btn btn-primary" id="myBtn"><i class="fa fa-play-circle play" aria-hidden="true"></i>&#xf04b;</i></button>
 
-  <!-- The Modal -->
-  <div class="modal fade" id="myModal">
+ <!-- The Modal -->
+ <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-      <div class="modal-content modal-play">
-      
-        <!-- Modal Header -->
-	        <div class="modal-header">
-	          <h4 class="text-center">TIỆC TRĂNG MÁU</h4>
-	        </div>
-        
-        <!-- Modal body -->
-		 <div class="embed-responsive embed-responsive-16by9">
-		 	<iframe width="560" height="315" src="https://www.youtube.com/embed/MXfWvVj-D1c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		</div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
+    
+      <!-- Modal content-->
       <div class="modal-content">
-      
-        <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        
-        <!-- Modal body -->
         <div class="modal-body">
-          Modal body..
+<div class="card">
+<article class="card-body">
+	 <a type="button" class="float-right btn btn-outline-primary" data-toggle="modal" data-target="#myModal1">Sign up</a>
+	<h4 class="card-title mb-4 mt-1">Sign in</h4>
+		<form action="#">
+		    <div class="form-group">
+		    	<label>Name</label>
+		        <input name="" class="form-control" id="form-control-name" placeholder="Name">
+		    </div> <!-- form-group// -->
+		    <div class="form-group">
+		    	<label>Your password</label>
+		        <input class="form-control" placeholder="******" id="password" type="password">
+		    </div> <!-- form-group// --> 
+		    <div class="form-group"> 
+		    <div class="checkbox">
+		      <label> <input type="checkbox"> Save password </label>
+		    </div> <!-- checkbox .// -->
+		    </div> <!-- form-group// -->  
+		    <div class="form-group">
+		        <button type="submit" class="btn btn-primary btn-block" id="btn-block"> Login  </button>
+		    </div> <!-- form-group// -->                                                           
+		</form>
+</article>
+</div> <!-- card.// -->
         </div>
-        
-        <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
+      </div>
+      
+    </div>
+  </div>
+        
+ <!-- Modal body -->
         
       </div>
     </div>
   </div>
-  <!-- login -->
   
 </div>
 
   </div>
   <!-- play -->
+
+
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+			<h4 class="card-title mb-4 mt-1">Sign up</h4>
+          			<form action="/action_page.php">
+          				<div class="form-group">
+          					<div class="row">
+          						<div class="col-md-6">
+          							<label for="email">First Name:</label>
+					      			<input type="email" class="form-control" id="first_name" placeholder="First Name" name="First Name">
+          						</div>
+          						<div class="col-md-6">
+          							 <label for="email">Last Name:</label>
+					      			<input type="email" class="form-control" id="Last Name" placeholder="Last Name" name="Last Name">
+          						</div>
+          					</div>
+					      
+					    </div>
+					    <div class="form-group">
+					      <label for="email">Address</label>
+					      <input type="email" class="form-control" id="address" placeholder="Address" name="address">
+					    </div>
+					    <div class="form-group">
+					      <label for="email">Phone</label>
+					      <input type="email" class="form-control" id="Phone" placeholder="Phone" name="Phone">
+					    </div>
+					    <div class="form-group">
+					      <label for="email">Email:</label>
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+					    </div>
+					    <div class="form-group">
+					    	<div class="row">
+					    		<div class="col-md-6">
+					    			<label for="pwd">Password:</label>
+					      			<input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+					    		</div>
+					    		<div class="col-md-6">
+					    			<label for="pwd">Confirm Password:</label>
+					      			<input type="password" class="form-control" id="password_confirmation" placeholder="Confirm Password" name="password_confirmation">
+					    		</div>
+					    	</div>
+					      
+					    </div>
+					    <div class="form-group form-check">
+					      <label class="form-check-label">
+					        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+					      </label>
+					    </div>
+					    <button type="submit" class="btn btn-primary">Submit</button>
+					  </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+
+
+
   <!-- card -->
   <div class="container">
   		<div class="row">
@@ -144,8 +228,13 @@
   					<b>Type : </b>
   					<i>2D | Normal | Normal sound | </i>
   				</p>
-  				<button type="button" class="btn btn-danger Details-dt">Buy</button>
-  				<button type="button" class="btn btn-danger Details-dt">Star</button>
+  				
+  				<div class="bt-dt-ct" id="112">
+  					<button type="button" class="btn btn-danger Details-dt" style="margin-top: 0.3em;
+    float: left;margin-right: 1em;" >Buy</button>
+  					<button type="button" class="btn btn-danger Details-dt" id="star" style="margin-top: 0.3em;
+    float: left;">Star</button>
+  				</div>
   			</div>
   		</div>
   </div>
@@ -179,7 +268,7 @@
 						<div class="comment-head">
 							<h6 class="comment-name by-author"><a href="http://creaticode.com/blog">Agustin Ortiz</a></h6>
 							<span>hace 20 minutos</span>
-							<i class="fa fa-reply"></i>
+							<i class="fa fa-reply" id="repcm"></i>
 							<i class="fa fa-heart"></i>
 						</div>
 						<div class="comment-content">
@@ -207,7 +296,7 @@
 					</li>
 
 					<li>
-						<!-- Avatar -->
+						Avatar
 						<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""></div>
 						<!-- Contenedor del Comentario -->
 						<div class="comment-box">
@@ -224,24 +313,8 @@
 					</li>
 				</ul>
 			</li>
-
-			<li>
-				<div class="comment-main-level">
-					<!-- Avatar -->
-					<div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-					<!-- Contenedor del Comentario -->
-					<div class="comment-box">
-						<div class="comment-head">
-							<h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-							<span>hace 10 minutos</span>
-							<i class="fa fa-reply"></i>
-							<i class="fa fa-heart"></i>
-						</div>
-						<div class="comment-content">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-						</div>
-					</div>
-				</div>
+			<li class="cm">
+					
 			</li>
 		</ul>
 	</div>
@@ -256,17 +329,17 @@
 	    <div class="row">
 	    
 	    <div class="col-md-6">
-	    						<div class="widget-area no-padding blank">
+	    						<div class="widget-area no-padding blank" >
 									<div class="status-upload">
-										<form>
-											<textarea placeholder="What are you doing right now?" ></textarea>
+										<form action="#">
+											<textarea placeholder="What are you doing right now?" id="test"></textarea>
 											<ul>
 												<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="fa fa-music"></i></a></li>
 												<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class="fa fa-video-camera"></i></a></li>
 												<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Sound Record"><i class="fa fa-microphone"></i></a></li>
 												<li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="fa fa-picture-o"></i></a></li>
 											</ul>
-											<button type="submit" class="btn btn-success green"><i class="fa fa-share"></i> Share</button>
+											<button type="submit" class="btn btn-success green" id="share"><i class="fa fa-share"></i> Share</button>
 										</form>
 									</div><!-- Status Upload  -->
 								</div><!-- Widget Area -->
