@@ -123,18 +123,38 @@ $(document).ready(function(){
   });
 
 function myFunction() {
-  $("#star1").css("color", "yellow");
+ $("#star1").css("color", "yellow");
+  $("#star2").css("color", "#212529");
+  $("#star3").css("color", "#212529");
+  $("#star4").css("color", "#212529");
+  $("#star5").css("color", "#212529");
 }
 function myFunction1() {
+  $("#star1").css("color", "yellow");
   $("#star2").css("color", "yellow");
+  $("#star3").css("color", "#212529");
+  $("#star4").css("color", "#212529");
+  $("#star5").css("color", "#212529");
 }
 function myFunction2() {
+  $("#star1").css("color", "yellow");
+  $("#star2").css("color", "yellow");
   $("#star3").css("color", "yellow");
+  $("#star4").css("color", "#212529");
+  $("#star5").css("color", "#212529");
 }
 function myFunction3() {
+  $("#star1").css("color", "yellow");
+  $("#star2").css("color", "yellow");
+  $("#star3").css("color", "yellow");
   $("#star4").css("color", "yellow");
+  $("#star5").css("color", "#212529");
 }
 function myFunction4() {
+  $("#star1").css("color", "yellow");
+  $("#star2").css("color", "yellow");
+  $("#star3").css("color", "yellow");
+  $("#star4").css("color", "yellow");
   $("#star5").css("color", "yellow");
 }
 function onclickstar1() {
