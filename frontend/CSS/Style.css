@@ -560,14 +560,97 @@ body {
 #star1{
 	margin-left: 1em;
 }
+.carenda{
+	margin:1em 1em 1em 0;
+	width: 13px;
+    font-size: 34px;
+    border-bottom: 2px solid #231f20;
+    font-family: 'Linux Libertine';
+    color: #231f20;
+    font-weight: bold;
+}
+.carenda-number{
 
+}
+.col-md-1{
 
+	margin-right: 3em;
+}
 
+.monday{
+	padding-left: 1.5em;
+}
+.on{
 
+	height: 40px;
+    background-color: red;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    width: 129px;
+    padding-right: 5px;
+}
+.area_zone p{
+	    margin-bottom: 2em;
+	   
+}
+.area_zone a{ color: black;}
+.on{
+	padding: 1em;
+}
+.area_list li{
 
+	float: left;
+    margin: 0 0 8px 5px;
+    display: table;
+}
+.area_list li p{
+	overflow: hidden;
+    display: table-cell;
+    vertical-align: middle;
+    width: 129px;
+    height: 40px;
+    border: 1px solid #efefef;
+    background: #efefef;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    /* line-height: 16px; */
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    letter-spacing: -1px;
+}
+.add-Hokkaido{
+	width: 150px;
+    height: 40px;
+    background: red;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+.ng-scope img{
+width: 100px;
+height: auto;
+margin-right: 1em;
 
-
-
+}
+.ng-scope p{
+	font-size: 18px;
+}
+.ng-scope i{
+	margin: 0 1em;
+	font-size: 20px;
+}
+.theater a{
+	padding: 5px 10px;
+    display: inline-flex;
+    margin: 2em 1px;
+    border: 1px solid #ced0da;
+    color: #43464b;
+}
+.ng-scope{
+border-bottom: 1px solid #f1f1f1;}
 
 
 
