@@ -15,37 +15,37 @@ $(document).ready(function() {
 $(document).ready(function() {
 
 	var area_list_1=`
-	<div class="area_list_1">
+	<div class="area_list_1" onclick="myFunction()">
 			<li >
-							<p class="area_cont on">Hokkaido</p>
+							<p class="area_cont on" data="Hokkaido">Hokkaido</p>
 						</li>
 						
 	</div>					
 	`;
 	var area_list_2=`
-		<div class="area_list_2">
+		<div class="area_list_2" onclick="myFunction()">
 						<li >
-							<p class="area_cont on">Aomori</p>
+							<p class="area_cont on" data1="Aomori">Aomori</p>
 						</li>
 						<li>
-							<p class="area_cont on" >Iwate</p>
+							<p class="area_cont on" data1="Iwate">Iwate</p>
 						</li>
 						<li >
-							<p class="area_cont on">Miyagi</p>
+							<p class="area_cont on" data="Miyagi">Miyagi</p>
 						</li>
 						<li>
-							<p class="area_cont on" >Akita</p>
+							<p class="area_cont on" data="Akita">Akita</p>
 						</li>
 						<li >
-							<p class="area_cont on">Yamagata</p>
+							<p class="area_cont on" data="Yamagata">Yamagata</p>
 						</li>
 						<li>
-							<p class="area_cont on" >Fukushima</p>
+							<p class="area_cont on" data="Fukushima">Fukushima</p>
 						</li>
 	</div>	
 	`;
 	var area_list_3=`
-		<div class="area_list_3">
+		<div class="area_list_3" onclick="myFunction()">
 						<li >
 							<p class="area_cont on">Ibaraki</p>
 						</li>
@@ -70,8 +70,8 @@ $(document).ready(function() {
 	</div>	
 	`;
 	var area_list_4=`
-		<div class="area_list_4">
-						<li >
+		<div class="area_list_4" onclick="myFunction()">
+						<li class="1212">
 							<p class="area_cont on">Niigata</p>
 						</li>
 						<li>
@@ -101,7 +101,7 @@ $(document).ready(function() {
 	</div>	
 	`;
 	var area_list_5=`
-		<div class="area_list_5">
+		<div class="area_list_5" onclick="myFunction()">
 						<li >
 							<p class="area_cont on">Mie</p>
 						</li>
@@ -126,7 +126,7 @@ $(document).ready(function() {
 	</div>	
 	`;
 	var area_list_6=`
-		<div class="area_list_6">
+		<div class="area_list_6" onclick="myFunction()">
 						<li >
 							<p class="area_cont on">Tottori</p>
 						</li>
@@ -145,7 +145,7 @@ $(document).ready(function() {
 	</div>	
 	`;
 	var area_list_7=`
-		<div class="area_list_7">
+		<div class="area_list_7" onclick="myFunction()">
 						<li >
 							<p class="area_cont on">Tokushima</p>
 						</li>
@@ -161,7 +161,7 @@ $(document).ready(function() {
 	</div>	
 	`;
 	var area_list_8=`
-		<div class="area_list_8">
+		<div class="area_list_8" onclick="myFunction()">
 						<li >
 							<p class="area_cont on">Fukuoka</p>
 						</li>
@@ -273,3 +273,8 @@ $(document).ready(function() {
 		});
 		
 });
+function myFunction() {
+  alert("hee");
+  var a=$(this).attr('data');
+  alert(a);
+}
