@@ -1,10 +1,13 @@
+<?php 
+require_once ('DB/dbhelper.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../CSS/Style.css">
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
@@ -15,12 +18,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js">
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="../JS/buyjs.js"></script>
 </head>
 <body>
+	<div class="icon-left">
+		<a href="">
+			<i class="fa fa-facebook-official" ></i>
+		</a>
+
+	</div>
+	<div class="icon_phone">
+		<a href="">
+			<i class="fa fa-phone" aria-hidden="true"></i>
+		</a>
+	</div>
+	<div class="icon-messenger">
+		<a href="">
+			<i class='fab fa-facebook-messenger'></i>
+		</a>	
+	</div>
+	
+		<div class="container-fluid">
+			<nav class="navbar navbar-light bg-light">
+				<img src="../IMG/logo1.jpg" height="50" alt="">
+				  <form class="form-inline">
+					    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+					    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				  </form>
+			</nav>
+		</div>
+	<!-- carousel -->
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   	<ol class="carousel-indicators">
 	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -55,148 +81,108 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div class="container">
-	<div class="row">
-		<div class="col-md-12 carenda">
-			
+<!-- menu -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 	<div class="collapse navbar-collapse" id="navbarText">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(Current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link navbar-meu" href="#">Movie Odd</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Theater</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Series movie</a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Cartoon</a>
+	      </li>
+	    </ul>
+ 	</div>
+</nav>
+<!-- menu -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+    	<img class="d-block w-75 img-fluid" src="../IMG/pp1.jpg">
+    </div>
+</button>
+    <div class="col-md-4 text-center">
+    	<span>BOX OFFICE</span>
+    	<?
+    		$sql="select *from Movie";
+    		$Moveilist=executeResult($sql);
+    		$stt=0;
+    	?>
+    	<div class="list-group navite_rankleft">
+ 	 		
+ 	 			<?
+ 	 				foreach ($Moveilist as $item) {
+ 	 					echo '
+ 	 					<a href="#" class="list-group-item list-group-item-action ">
+ 	 						<em>'.($stt=$stt+1).'</em>
+ 	 						<em>'.($item['name_movie']).'</em>
+ 	 					</a>	
+ 	 					'; 	 				}
+ 	 			?>
+	</div>
+</div>
+  </div>
+</div>
+<!-- thumbail -->
+ <div class="container thumbnail-movie">
+
+    	<div class="row">
+     	
+<?php 
+$sql="select * from Movie";
+$Moveilist= executeResult($sql);
+foreach ($Moveilist as $item) {
+	echo '	
+		<div class="card col-md-3 style="margin: 1em 0 1em 0;"> 
+            <img class="card-img-top img-fluid" src='.($item['directors']).'>
+			<div class="card-body">
+            	<h6 class="card-title" style ="text-align: center">'.($item['name_movie']).'</h6>
+                <p class="card-text"><small class="text-muted">'.($item['movie_time']).'</small></p>
+                <a href="http://localhost/php/ticket/frontend/php/details.php#" class="card-link">Details</a>
+    			<a href="#" class="card-link">Buy</a>
+           		</div>
+         </div>';
+}
+ ?> 
+  </div>
+</div>
+<!-- /thumbail -->
+
+<div class="container padding contact">
+	<div class="row text-center">
+		<div class="col-12">
+			<p class="display-4">Contact</p>
 		</div>
-		<div class="container">
-			<div class="row" style="margin-left:5.5em">
-				<div class="col-md-1">
-					<p>Monday</p>
-					<span class="monday">1</span>
-				</div>
-				<div class="col-md-1">
-					<p>Tuesday</p>
-					<span class="monday">2</span>
-				</div>
-				<div class="col-md-1">
-					<p>Wednesday</p>
-					<span class="monday">3</span>
-				</div>
-				<div class="col-md-1">
-					<p>Thursday</p>
-					<span class="monday">4</span>
-				</div>
-				<div class="col-md-1">
-					<p style="color: #407bbb;">Friday</p>
-					<span class="monday" style="color: #407bbb;">5</span>
-				</div>
-				<div class="col-md-1">
-					<p style="color: #cd190b;">Saturday</p>
-					<span class="monday" style="color: #cd190b;">6</span>
-				</div>
-				<div class="col-md-1">
-					<p style="color: #cd190b;">Sunday</p>
-					<span class="monday" style="color: #cd190b;">7</span>
-				</div>
-			</div>
+		<div class="col-md-3">
+			<img src="http://media.lottecinemavn.com/Media/WebAdmin/9b7079b7e0df4f0fa4410db6f411700e.jpg" alt="">
+		</div>
+		<div class="col-md-3">
+			<img src="http://media.lottecinemavn.com/Media/WebAdmin/b516d134764145bab4df56e5567cbd47.jpg" alt="">
+		</div>
+		<div class="col-md-3">
+			<img src="http://media.lottecinemavn.com/Media/WebAdmin/7dc4212f98b24101ac1642e8276061ab.jpg" alt="">
+		</div>
+		<div class="col-md-3">
+			<img src="http://media.lottecinemavn.com/Media/WebAdmin/167efc93b2a745c1aa46b38e7856ac6a.png" alt="">
 		</div>
 	</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6"><p ><h1 class="text-center" style="margin: 1em 0">RAP</h1></p></div>
-			<div class="col-md-6"><p ><h1 class="text-center" style="margin: 1em 0">Movie</h1></p></div>
-		</div>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-2">
-				<div class="area_zone">
-					<p class="Hokkaido1" data="1" id="1">Hokkaido</p>
-					<p class="Tohoku2" data="2" id="2">Tohoku</p>
-					<p class="Kanto3" data="3" id="3">Kanto</p>
-					<p class="Chubu4" data="4" id="4">Chubu</p>
-					<p class="Kansai5" data="5" id="5">Kansai</p>
-					<p class="Chugoku6" data="6" id="6">Chugoku</p>
-					<p class="Shikoku7" data="7" id="7">Shikoku</p>
-					<p class="Kyushu8" data="8" id="8">Kyushu</p>
-
-				</div>
-			</div>
-			<div class="col-md-6" >
-					<ul class="area_list">
-						
-					</ul>
-		</div>
-		<div class="col-md-4">
-				<div class="ng-scope">
-					<img src="../IMG/buy1.png" alt="" class="float-left">
-					<p><b>The Banishing</b></p>
-					<span>
-						<i>2020</i>
-						<i class='far fa-clock'>  96 phút</i>
-					</span>
-					<div class="showtimes-item theater">
-						<a href="#">9:15</a>
-						<a href="#">15:30</a>
-						<a href="#">20:30</a>
-
-					</div>
-				</div>
-				<div class="ng-scope">
-					<img src="../IMG/buy2.jpg" alt="" class="float-left">
-					<p><b>The Croods 2: A New Age</b></p>
-					<span>
-						<i>2020</i>
-						<i class='far fa-clock'>  96 phút</i>
-					</span>
-					<div class="showtimes-item theater">
-						<a href="#">9:15</a>
-						<a href="#">15:30</a>
-						<a href="#">20:30</a>
-
-					</div>
-				</div>
-				<div class="ng-scope">
-					<img src="../IMG/buy3.jpg" alt="" class="float-left">
-					<p><b>Freaky</b></p>
-					<span>
-						<i>2020</i>
-						<i class='far fa-clock'>  96 phút</i>
-					</span>
-					<div class="showtimes-item theater">
-						<a href="#">9:15</a>
-						<a href="#">15:30</a>
-						<a href="#">20:30</a>
-
-					</div>
-				</div>
-				<div class="ng-scope">
-					<img src="../IMG/buy4.jpg" alt="" class="float-left">
-					<p><b>Recon</b></p>
-					<span>
-						<i>2020</i>
-						<i class='far fa-clock'>  96 phút</i>
-					</span>
-					<div class="showtimes-item theater">
-						<a href="#">9:15</a>
-						<a href="#">15:30</a>
-						<a href="#">20:30</a>
-
-					</div>
-				</div>
-				<div class="ng-scope">
-					<img src="../IMG/buy5.jpg" alt="" class="float-left">
-					<p><b>Alone</b></p>
-					<span>
-						<i>2020</i>
-						<i class='far fa-clock'>  96 phút</i>
-					</span>
-					<div class="showtimes-item theater">
-						<a href="#">9:15</a>
-						<a href="#">15:30</a>
-						<a href="#">20:30</a>
-
-					</div>
-				</div>
-			</div>
-	</div>
-	</div>
-	<!-- phần minh trí dev -->
-	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>	
-	<footer>
+</div>
+</div>
+	
+</div>
+<footer>
 	<div class="container-fluid padding">
 		<div class="row text-center">
 			<div class="col-md-3">
@@ -251,8 +237,8 @@
 		</div>
 		</div>
 	</div>
-
-
 </footer>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>	
+
 </body>
 </html>
