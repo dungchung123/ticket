@@ -722,16 +722,41 @@ color: white}
     top: 20em;
 }
 
+#myModal{
+background: #2d2c2c;
+}
+.modal-dialog{
+	opacity: 1;
+}
+.fa-bars{
+	float: right;
+	font-size: 3em;
+}
 
+.collapse ul li a{
+	font-size: 16px;
+	color:  #000;
+}
+.collapse{
+height: 30px;
+    line-height: 58px;
+}
+.top5-lef-img
+{position: absolute;}
+.top-felt-minimg{
+	position: relative;
+	width: 50px;
+	top: 25px;
+    left: 33px;
+}
 
-
-
-
-
-
-
-
-
+.top1-title{
+	position: relative;
+    color: white;
+    left: 30%;
+    bottom: 40px;
+    font-size: 1.5em;
+}
 
 
 
