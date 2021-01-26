@@ -27,7 +27,7 @@
 		<a href="">
 			
 		</a>
-		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><i style="font-size:1.2em;" class="fa" data-toggle="modal" data-toggle="modal" data-target="#myModal">&#xf08b;</i></button>
+		<button type="button" class="btn btn-info btn-lg" id="loginbt" data-toggle="modal" data-target="#myModal"><i style="font-size:1.2em;" class="fa" data-toggle="modal" data-toggle="modal" data-target="#myModal">&#xf08b;</i></button>
 
 	</div>
 	<div class="icon_phone" id="icon_phone" >
@@ -37,10 +37,8 @@
 
 	</div>
 
-	<div class="icon-messenger">
-		<a href="">
-			<i class='fab fa-facebook-messenger'></i>
-		</a>	
+	<div class="icon-messenger" id="icon-messenger" onclick="clickmessenger()">
+			<i class='fab fa-facebook-messenger' id="messenger-icon"></i>	
 	</div>
 	<!-- heder -->
 	<div class="container-fluid">
@@ -437,6 +435,56 @@
 		</div>
 	</div>
 </footer>
+<!-- mesenger -->
+<div class="messenger" id="messenger"> 
+	<div class="messenger-top">
+		<div class="messenger-top-left">
+			<img src="../IMG/logo1.jpg" alt="assd" >
+			
+		</div>
+		<div class="messenger-top-mid">
+			<div class="messenger-top-mid-name">
+				<h5>che cong tam</h5>
+			</div>
+			<div class="messenger-top-mid-naame0-bt">
+				<i>cong ty hưu hạn</i>
+			</div>
+			
+		</div>
+		<div class="messenger-top-right">
+			<div class="messenger-top-right-icon">
+				<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+				<i class="fas fa-minus"></i>
+				<i class="fas fa-times"></i>
+			</div>
+
+		</div>
+	</div>
+	<div class="messenger-mid">
+		<div class="messenger-mid-container">
+			<div class="messenger-mid-us">
+				<time class="messenger-mid-time">2021/1/25....</time>
+				<img src="../IMG/logo1.jpg" alt="asdsd">
+				<p class="">Xin chào Công!!! 👋 Cảm ơn bạn đã liên hệ với Shop game Hồng Ân. Bạn cần shop giúp gì nào?</p>
+			</div>
+			
+			<div class="messenger-mid-ad">
+				<time class="messenger-mid-time">2021/1/25....</time>
+				<img src="../IMG/logouser.jpeg" alt="asdsd">
+				<p class="">fjjßß</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="messenger-bottom">
+		<i class="fas fa-image"></i>
+		<form class="messenger-bottom-form">
+		     <input class="form-control form-control-lg" id="mesengeriput" type="text">
+  		</form>
+  		<i class="fa fa-paper-plane" id="mesengerclick" aria-hidden="true"></i>
+</div>
+<!-- messenger -->
 	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>	
 </body>
 </html>
+

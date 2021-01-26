@@ -32,6 +32,9 @@ $(document).ready(function(){
     $(".ht").append(numbericon1);
     $("#icon1").remove();
 }
+// check enter login
+
+//check enter login
    $(document).ready(function($) {
      $("#btn-block").on('click', function(event) {
        
@@ -192,33 +195,89 @@ function onclickstar5() {
   $("#star4").css("color", "yellow");
   $("#star5").css("color", "yellow");
 }
-onclickshra
-
-// function onclickscommentslist() {
-//   var onclickscommentslist=`
-//     <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-//             <!-- Contenedor del Comentario -->
-//             <div class="comment-box">
-//               <div class="comment-head">
-//                 <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-//                 <span>hace 10 minutos</span>
-//                 <i class="fa fa-reply"></i>
-//                 <i class="fa fa-heart"></i>
-//               </div>
-//               <div class="comment-content">
-//                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-//               </div>
-//             </div>
-//   `;
-//   $("#1212").append(onclickscommentslist);
-// }
-
 
 $(document).ready(function(){
   $("button").click(function(){
     $("#div1").load("test.txt");
   });
 });
+function clickmessenger(){
+ 
+  var login=checklogin();
+  if (login==true) {
+     document.getElementById("messenger").style.display = "block";
+     document.getElementById("icon_phone").style.display = "none";
+      document.getElementById("icon-left").style.display = "none";
+      document.getElementById("icon-messenger").style.display = "none";
+      document.getElementById("loginbt").style.display = "none";
+  }
+  else{
+    alert("Loginしてくだいさい");
+    var inputs = document.getElementsByClassName('btn btn-info btn-lg');
+    for(var i=0; i<inputs.length;i+=1) {
+      inputs[i].click();
+    }
+  }
 
+}
+function checklogin(){
+  var check=true;
+  var name=$('.form-group').find('#form-control-name').val();
+  if (name=="") {
+    check=false;
+  }
+  else{
+    check=true;
+  }
+  return check;
+}
+$(document).ready(function(){
+  $(".fa-minus").click(function(){
+   $("#messenger").css("display", "none");
+   $("#icon_phone").css("display", "block");
+   $("#icon-left").css("display", "block");
+   $("#icon-messenger").css("display", "block");
+   $("#loginbt").css("display", "block");
+  });
+});
+$(document).ready(function(){
+  $(".fa-times").click(function(){
+   $("#messenger").css("display", "none");
+   $("#icon_phone").css("display", "block");
+   $("#icon-left").css("display", "block");
+   $("#icon-messenger").css("display", "block");
+   $("#loginbt").css("display", "block");
+  });
+});
 
+$(document).ready(function() {
+  $("#mesengerclick").click(function() {
+    var today = new Date();
+    var datecm = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    var textmessenger=$('.messenger-bottom').find('#mesengeriput').val();
+    var name=$('.form-group').find('#form-control-name').val();
+    alert(datecm);
+     var admin=`
+  <div class="messenger-mid-us">
+    <time class="messenger-mid-time">${datecm}</time>
+    <img src="../IMG/logo1.jpg" alt="asdsd">
+    <p class="">${textmessenger}</p>
+  </div>
+  `;
+  var user=`
+  <div class="messenger-mid-ad">
+        <time class="messenger-mid-time">${datecm}</time>
+        <img src="../IMG/logouser.jpeg" alt="asdsd">
+        <p class="">${textmessenger}</p>
+  </div>
+  `;
+    if (name=="tam") {
+      $(".messenger-mid-container").append(admin);
+    }
+    else {
+       $(".messenger-mid-container").append(user);
+    }
+  });
+  
 
+});
