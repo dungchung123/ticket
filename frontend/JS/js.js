@@ -16,22 +16,7 @@ $(".btn-danger").click(function(){
 });
 $(document).ready(function(){  
     $("[data-toggle=tooltip]").tooltip();
-});
-    function numberonmouseover() {
-      var number=`
-      <div ><i class="fa fa-phone" id="icon1" aria-hidden="true"  onmouseout="numberonmouseout()" style="font-size: 0.6em;">+081.23455689</i></div>
-    `;
-    
-  $("#icon2").mouseover(function(event) {
-      $(".ht").append(number);
-       $("#icon2").remove();
-    });  
-    }
-  function numberonmouseout() {
-    var numbericon1=`<div id="icon2"><i class="fa fa-phone icon2"  aria-hidden="true"></i></div>`;
-    $(".ht").append(numbericon1);
-    $("#icon1").remove();
-}
+}); 
 // check enter login
 
 //check enter login
@@ -256,7 +241,6 @@ $(document).ready(function() {
     var datecm = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
     var textmessenger=$('.messenger-bottom').find('#mesengeriput').val();
     var name=$('.form-group').find('#form-control-name').val();
-    alert(datecm);
      var admin=`
   <div class="messenger-mid-us">
     <time class="messenger-mid-time">${datecm}</time>

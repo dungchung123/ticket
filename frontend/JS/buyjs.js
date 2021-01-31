@@ -250,12 +250,7 @@ var area_list_1=`
 							$(".addclass").addClass("addday");
 						}
 						else {
-							day=day+1;
-							var c=`<div class="col-md-1">
-								<p>${getDay[j]}</p>
-								<span class="monday">${(day)}</span>
-								</div>`;
-							$(".rowcarenda").append(c);
+						("rowcarenda").append(c);
 							day=day;
 						};
 					}
@@ -278,7 +273,6 @@ $(document).ready(function() {
 			$(".carenda").append(getFullYear);
 });
 $(document).ready(function() {
-	
 	
 		$(".area_list").append("");
 		$("#1").on('click', function() {
@@ -393,9 +387,6 @@ $(document).ready(function() {
 		US=$(".modal-body").find("#inputEmail").val();
 		var Pass=$(".modal-body").find("#inputPassword").val();
 		event.preventDefault();
-	console.log(ArrUS);
-	console.log(ArrPass);
-	console.log(Pass);
 	var textUS=`<p class="textUS">${US}</p>`;
 	for (var i = 0; i < ArrUS.length; i++) {
 		for (var ii = 0; ii < ArrPass.length; ii++) {
@@ -410,7 +401,6 @@ $(document).ready(function() {
 		}
 		
 	}
-	console.log(US);
 	});
 });
 $(document).ready(function() {
@@ -428,12 +418,11 @@ $(document).ready(function() {
 			var ulrlistmovie=thumlistmovie.find('img').attr('src');
 			var titilelistmoive=thumlistmovie.find('p').text();
 			var datacar=thumlistmovie.find("button").attr('data');
-		
 			var obj={
 				id:datacar,
 				img:ulrlistmovie,
 				title:titilelistmoive,
-				quantitiy:qtt
+				moeny:200,
 			};
 		var flag=false;
 		for (var i = 0; i <cart.length; i++) {
@@ -441,22 +430,22 @@ $(document).ready(function() {
 				flag=true;
 				break;
 			}
-			
 		}
 		if (flag===false) {
+				obj.quantity=1;
 				cart.push(obj);
 			}
 			else{
-				alert("co roi");
+				alert("ある");
 			}
 			addcart();
 		}
 
 		else if (US=="") {
-			alert("dang nhap");
+			alert("登録してください");
 		}
 		else {
-			alert("kiem tra tai khoanr");
+			alert("登録をチェックして下さい");
 		}
 	});
 });
@@ -465,7 +454,7 @@ function addcart(){
 	var	ckunit="";
 	for (var i = 0; i < cart.length; i++) {
 			 ckunit +=`<div class="row addcart-row">
-				 <div class="col-md-2" class="img-fluid">
+				 <div class="col-md-2">
 				<img src="${cart[i].img}" alt="" class="addcart-img img-fluid">
 			</div>
 			<div class="col-md-4 addcart-title">
@@ -480,31 +469,22 @@ function addcart(){
 					</small>
 				</h4>
 			</div>
-			<div class="col-md-2 addcart-money">
+			<div class="col-md-2 addcart-money" idamoney="${cart[i].id}">
 				<h6>
 					<strong>
-						<span class="money">200</span><span>¥</span>
+						<span class="money" id="money${cart[i].id}" datavl="${cart[i].moeny}">${cart[i].moeny}</span>
 					</strong>
 				</h6>
 			</div>
-			<div class="col-md-2 addcart-quantity ">
-				 <div class="input-group">
-                     <span class="input-group-btn tru" >
-	                     <button type="button" id="quantity${cart[i].id}" class="quantity-left-minus btn btn-danger btn-number " dataIdbt="${cart[i].id}"  data-type="minus" data-field="">
-	                         <span class="glyphicon glyphicon-minus"></span>
-	                     </button>
-                     </span>
-                     <input type="text" id="quantity${cart[i].id}" dataIdbt="${cart[i].id}" name="quantity" class="form-control input-number text-center" value="${cart[i].quantitiy}" min="1" max="100">
-                     <span class="input-group-btn cong" onclick="quantityplus()">
-                        <button type="button" class="quantity-right-plus btn btn-success btn-number" id="${cart[i].id}" dataid="${cart[i].id}"   data-type="plus" data-field="">
-                         	<span class="glyphicon glyphicon-plus ${cart[i].id}" onclick="quantityleftminus()"></span>
-                         </button>
-                         </span>
-                 </div>
+			<div class="col-md-2 addcart-quantity">
+				 <div class="quantity" dataid="${cart[i].id}">
+                      <input type="button" value="+" class="plus" id="plus1">
+                     <input type="number" step="1" max="99" min="1" onchange="changeUnitquantity(this ,${cart[i].id})" value="${cart[i].quantity}" title="Qty" class="qty" id="qty${+cart[i].id}" size="4">
+                    <input type="button" value="-" class="minus">
+                </div>
 			</div>
 			<div class="col-md-2 addcart-glyphicon">
 				<button type="" class="btn btn-default" onclick="deleteitemCart(${cart[i].id})">
-					<span>1</span>
 					<i class="glyphicon glyphicon-trash"></i>
 				</button>
 			</div>
@@ -512,55 +492,44 @@ function addcart(){
 		`;
 	}
 	$(".addcart").append(ckunit);
+		var totamoney=0;
+		for (var i = 0; i < cart.length; i++) {
+			totamoney +=parseInt(200) * parseInt(cart[i].quantity);
+	var	footer=`<div class="pull-right" style="margin: 10px">
+                   			 <a href="#" class="btn btn-success pull-right">Checkout</a>
+                    		<div class="pull-right" style="margin: 5px">
+                        		Total price: <b>${totamoney}</b>
+                    		</div>
+                		</div>`;
+        }
+        $(".addcart").append(footer);
+	$(".plus").click(function() {
+		var parents = $(this).parents('.addcart-quantity');
+		var iddatacar=parents.find('.quantity').attr('dataid');
+		var quantity1=$(document).find("#qty"+ iddatacar).val();
+		var parentsmoney=$(this).parents('.addcart-row');
+		var idmoeny=parentsmoney.find('.addcart-money').attr('idamoney');
+		var money1=$(document).find("#money"+idmoeny).text();
+		$("#qty"+iddatacar).val(parseInt(quantity1)+parseInt(1));
+		$("#money"+idmoeny).val(money1*quantity1);
+		for (var i = 0; i < cart.length; i++) {
+			cart[i].quantity=quantity1;
+		}
+	});
+	$(".minus").click(function() {
+		var parents = $(this).parents('.addcart-quantity');
+		var iddatacar=parents.find('.quantity').attr('dataid');
+		var quantity=$(document).find("#qty"+ iddatacar).val();
+		
+		if (quantity<1) {
+			deleteitemCart(iddatacar)		
+		}
+		else
+		{
+			var chack=$("#qty"+iddatacar).val(parseInt(quantity)-parseInt(1));
+		}
 
-}
-$(document).ready(function(){
-
-var quantitiy=0;
-   $('.quantity-right-plus').click(function(e){
-        
-        // Stop acting like a button
-        e.preventDefault();
-        // Get the field name
-        var quantity = parseInt($('#quantity').val());
-        
-        // If is not undefined
-            
-            $('#quantity').val(quantity + 1);
-
-          
-            // Increment
-        
-    });
-
-     $('.quantity-left-minus').click(function(e){
-        // Stop acting like a button
-        e.preventDefault();
-        // Get the field name
-        var quantity = parseInt($('#quantity').val());
-        
-        // If is not undefined
-      
-            // Increment
-            if(quantity>0){
-
-            $('#quantity').val(quantity - 1);
-            }
-    });
-    
-});
-var quantitiy=0;
-function quantityplus() {
-	for (var i = 0; i < cart.length; i++) {
-		debugger;
-			var parents=$("."+cart[i]).parents(".addcart-row");
-			var id=parents.find('.quantity-right-plus').attr('dataid');
-			alert(id);
-	}
-	
- }
-
-function quantityleftminus(){ 
+	});
 }
 function deleteitemCart(id){
 	 for (var i = 0; i < cart.length; i++) { 
@@ -570,3 +539,21 @@ function deleteitemCart(id){
 	 		addcart();
 	 	}
 	}
+function changeUnitquantity(e,id){
+
+	var	valcard=e.value;
+	if (valcard > 0) {
+			for (var i = 0; i < cart.length; i++) {
+			if (cart[i].id==id) {
+				cart[i].quantity=valcard;
+				break;
+				}
+			}
+			ckunit();
+	}
+	else{
+				deleteitemCart(id);
+			}
+	}
+
+
