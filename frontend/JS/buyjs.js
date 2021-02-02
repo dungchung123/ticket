@@ -260,16 +260,16 @@ var area_list_1=`
 	});
 $(document).ready(function() {
 	 var d = new Date();
-  var n = d.getMonth()+1;
-  var getMonth=`<ins ><p style="float: left; font-size: 2em;margin-right: 0.3em;">${n}</p></ins>`;
-  $(".carenda").append(getMonth);
 });
 $(document).ready(function() {
 		var d = new Date();
 	var n = d.getFullYear();
+	var m= d.getMonth()+1;
+	var dd=d.getDay();
+
 			var data=$(this).attr('data');
 			// add date vao p
-			var getFullYear=`<p style="font-size: 20px;line-height: 7em;font-family: 'Arial', 'Helvetica', 'sans-serif';color: #555; " id="getFullYear">${n} December</p>`;
+			var getFullYear=`<p style="font-size: 1.5em;font-family: 'Arial', 'Helvetica', 'sans-serif';color: #555; " id="getFullYear">${n}年${m}月${dd}日</p>`;
 			$(".carenda").append(getFullYear);
 });
 $(document).ready(function() {
@@ -430,13 +430,15 @@ $(document).ready(function() {
 				flag=true;
 				break;
 			}
+			addcart();
 		}
 		if (flag===false) {
 				obj.quantity=1;
 				cart.push(obj);
 			}
 			else{
-				alert("ある");
+				
+				console.log(cart[quantity]);
 			}
 			addcart();
 		}
@@ -512,9 +514,6 @@ function addcart(){
 		var money1=$(document).find("#money"+idmoeny).text();
 		$("#qty"+iddatacar).val(parseInt(quantity1)+parseInt(1));
 		$("#money"+idmoeny).val(money1*quantity1);
-		for (var i = 0; i < cart.length; i++) {
-			cart[i].quantity=quantity1;
-		}
 	});
 	$(".minus").click(function() {
 		var parents = $(this).parents('.addcart-quantity');

@@ -930,8 +930,13 @@ padding: 10px;
     border-radius: 0;
     background-clip: padding-box
 }
+.top5-title h2{
+	margin-top: 1em;
+}
 
+.card-title{
 
+height: 2em;}
 
 
 
